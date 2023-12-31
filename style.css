@@ -1,0 +1,234 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    padding: 5px 10px;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: calc(100% + 20px);
+    height: calc(100% + 10px);
+    border-radius: 10px;
+    background-color: blue;
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: -1;
+}
+
+nav ul li a:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+}
+
+main {
+    /* Establish this element as the scroll container */
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    height: 100vh; /* Full viewport height */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
+}
+
+section {
+    scroll-snap-align: start; /* Snap to the start of each section */
+    height: 100vh; /* Make each section the full height of the viewport */
+    width: 80%; /* Adjust width as needed */
+    margin: 0 auto; /* Center the section horizontally */
+    padding: 60px 20px; /* Add some padding */
+    box-sizing: border-box; /* Include padding in the height calculation */
+    /* Add other styles as needed */
+}
+
+.left {
+    align-self: flex-start;
+    text-align: left;
+    border-right: 2px solid #ccc;
+    padding-right: 20px;
+}
+
+.right {
+    align-self: flex-end;
+    text-align: right;
+    border-left: 2px solid #ccc;
+    padding-left: 20px;
+}
+
+#resume {
+    text-align: center;
+    align-self: center;
+    border: none; /* Remove borders for the centered section */
+}
+
+#resume img {
+    max-width: 100%;
+    height: auto;
+}
+.about-content {
+    display: flex;
+    align-items: center; /* Aligns items vertically in the center */
+}
+
+.about-text {
+    flex: 1; /* Takes up remaining space */
+    padding-right: 20px; /* Adds some space between text and image */
+}
+
+.about-image {
+    flex-basis: 200px; /* Width of the image */
+    text-align: right;
+}
+.image-gallery {
+    display: flex;
+    justify-content: center; /* Centers the images horizontally */
+    flex-wrap: wrap; /* Allows images to wrap onto the next line */
+    gap: 20px; /* Space between images */
+    margin-top: 20px; /* Adds space between the profile picture and the gallery */
+}
+
+.image-gallery .additional-pic {
+    width: 200px; /* Fixed width for each image */
+    height: auto;
+    border-radius: 10px; /* Optional: Adds rounded corners to the images */
+    margin-bottom: 20px; /* Adds space below each image */
+}
+.highschool-content {
+    display: flex;
+    align-items: center; /* Aligns items vertically in the center */
+    justify-content: space-between; /* Creates space between text and image */
+}
+
+.highschool-image {
+    order: -1; /* Puts the image on the left */
+    flex-basis: 40%; /* Adjust the width of the image container */
+}
+
+.highschool-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Optional: Adds rounded corners to the image */
+    margin-top: 20px;
+}
+
+.highschool-text {
+    flex-basis: 60%; /* Adjust the width of the text container */
+    text-align: right; /* Aligns the text to the right */
+}
+
+.college-content {
+    display: flex;
+    align-items: center; /* Vertically align the items in the center */
+    justify-content: space-between; /* Creates space between the text and the image */
+}
+
+.college-text {
+    flex-basis: 60%; /* Adjust the width of the text container */
+    text-align: left; /* Aligns the text to the left */
+}
+
+.college-image {
+    flex-basis: 40%; /* Adjust the width of the image container */
+    text-align: right; /* Aligns the image to the right */
+}
+
+.college-image img {
+    width: 100%; /* Make the image responsive to the container width */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 10px; /* Optional: Adds rounded corners to the image */
+    margin-top: 20px; /* Adjust this value to move the image down if needed */
+}
+
+
+.extracurricular-content {
+    display: flex;
+    align-items: center; /* Vertically align the items in the center */
+    justify-content: space-between; /* Creates space between the image and the text */
+}
+
+.extracurricular-image {
+    flex-basis: 40%; /* Adjust the width of the image container */
+}
+
+.extracurricular-image img {
+    width: 70%; /* Make the image responsive to the container width */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 10px; /* Optional: Adds rounded corners to the image */
+    margin-top: 20px;
+}
+
+.extracurricular-text {
+    flex-basis: 70%; /* Adjust the width of the text container */
+    text-align: left; /* Aligns the text to the left */
+}
+
+.extracurricular-gallery {
+    display: flex;
+    justify-content: center; /* Centers the images horizontally */
+    flex-wrap: wrap; /* Allows images to wrap onto the next line */
+    gap: 30px; /* Space between images */
+    margin-top: 20px; /* Adds space between the text and the gallery */
+}
+
+.extracurricular-gallery .extracurricular-pic {
+    width: 300px; /* Fixed width for each image */
+    height: 175px; /* Fixed height for each image */
+    object-fit: cover; /* Ensures the image covers the box area, might crop the image */
+    border-radius: 10px; /* Optional: Adds rounded corners to the images */
+    margin-bottom: 20px; /* Adds space below each image */
+}
+
+#workexperience {
+    width: 70%; /* Or the width you prefer */
+    margin: 0 auto; /* Centers the section */
+    text-align: center; /* Centers the text */
+    padding: 60px 20px; /* Adds padding */
+    box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+#workexperience h2 {
+    margin-bottom: 20px; /* Adds space below the heading */
+    margin-top: 60px;
+}
+
+#workexperience p {
+    text-align: left; /* For left-aligned paragraphs */
+    margin-bottom: 30px; /* Adds space between paragraphs */
+}
+.resume-section {
+    text-align: center; /* Center the content */
+    padding: 20px; /* Add padding around the content */
+}
+
+.resume-section object {
+    width: 100%; /* Set the width of the PDF viewer to take up all available space */
+    height: 800px; /* Adjust the height to provide enough space for the PDF */
+    border: none; /* Optional: Removes any border that might be applied */
+}
+
